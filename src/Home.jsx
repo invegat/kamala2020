@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import storiesData from './StoriesData';
+// import storiesData from './StoriesData';
 import Story from './components/Story';
+import storiesData from './storiesData.json'
 import './index.css';
 
 export default class Home extends Component {
