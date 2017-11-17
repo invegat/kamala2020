@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 // import storiesData from './StoriesData';
-import Story from './components/Story';
-import storiesData from './storiesData.json'
-import './index.css';
+import Story from './Story';
+// import storiesData from './storiesData.json'
+import '../index.css';
 
 export default class Home extends Component {
   constructor(props) {
@@ -12,10 +12,10 @@ export default class Home extends Component {
     };
   }
   componentDidMount() {
-    let stories = [];
-    storiesData.forEach(story => {
-      stories.push(story);
-    });
+    const stories = this.props.fetchStories();
+    // storiesData.forEach(story => {
+    //   stories.push(story);
+    // });
     this.setState(
       {
         stories
@@ -26,12 +26,12 @@ export default class Home extends Component {
   render() {
     //if (this.state.stories.length === 0) {
     //  return <div />;
-    //}
+    //}  Heroku
     //console.log('render stories:', this.state.stories.length)
-    const stories = this.state.stories.map(story => {
+    const stories = this.props.stories.map(story => {
       return (
-        <li key={story.url} className='none'>
-          <Story text={story.text} url={story.url} a={story.a}/>
+        <li key={story.a} className='none'>
+          <Story key={story.a} text={story.text} url={story.url} a={story.a}/>
         </li>
       );
     });

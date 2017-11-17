@@ -21,9 +21,10 @@ export default class Story extends Component {
   }
   render() {
     return (
-      <div>
+      <div key={this.state.a}>
         <p>{this.state.text}</p>
         <a target='_blank' href={this.state.url}>{this.state.a}</a>
+        <p style={{height: 2 }}></p>    
       </div>
     );
   }
