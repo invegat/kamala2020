@@ -5,10 +5,12 @@ const CORS = require('cors');
 //const data = require('./JavaScriptLibraries.json');
 const assert = require('assert');
 const app = express();
-
+const path = require('path')
 // const stitch = require('mongodb-stitch');
 
 const statusCodes = require('./common/statusCodes.js');
+
+import databaseConfig from './db.config.json'
 
 app.use(bodyParser.json());
 app.use(CORS());
